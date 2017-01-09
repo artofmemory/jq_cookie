@@ -19,26 +19,6 @@ function jq_cookie_help($path, $arg) {
 }
 
 /**
- * Implements hook_menu().
- *
- * This controls the menu link and path/content of the settings page.
- */
-function jq_cookie_menu() {
-  $items = [];
-
-  $items['admin/config/services/jquery-cookie'] = [
-    'title' => 'jQuery Cookie Settings',
-    'description' => 'Configuration for the jQuery Cookie module',
-    'page callback' => 'drupal_get_form',
-    'page arguments' => ['jq_cookie_form'],
-    'access arguments' => ['access administration pages'],
-    'type' => MENU_NORMAL_ITEM,
-  ];
-
-  return $items;
-}
-
-/**
  * Implements hook_page_alter().
  *
  * Enables jquery.cookie, which is included in Drupal 7's core.
