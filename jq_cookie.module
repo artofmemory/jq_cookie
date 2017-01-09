@@ -13,7 +13,7 @@ function jq_cookie_help($path, $arg) {
   switch ($path) {
     case "admin/help#jq_cookie":
       $file_path = drupal_get_path('module', 'jq_cookie') . '/help/index.html';
-      return $msg . '<br><br><hr> ' . file_get_contents($file_path);
+      return file_get_contents($file_path);
       break;
   }
 }
@@ -25,7 +25,7 @@ function jq_cookie_help($path, $arg) {
  */
 function jq_cookie_page_alter(&$page) {
 
-  // Enable jQuery Cookie and put it on every page
+  // Enable jQuery Cookie from the system module and put it on every page
   drupal_add_library('system', 'jquery.cookie');
 
 }
