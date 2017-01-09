@@ -10,8 +10,6 @@ It uses `jq_cookie` rather than `jquery_cookie`, because another (abandoned) pro
 
 GPL 2. See the LICENSE file.
 
-This is alpha software. Use at your own risk.
-
 # Contributing
 
 Pull requests are welcome.
