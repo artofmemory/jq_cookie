@@ -3,3 +3,51 @@
 * @file
 * Enables jQuery Cookie from Drupal's core System Module
 */
+
+/**
+ * Implements hook_help().
+ *
+ * Displays help and module information.
+ */
+function jquery_cookie_help($path, $arg) {
+  switch ($path) {
+    case "admin/help#jquery_cookie":
+      $file_path = drupal_get_path('module', 'jquery_cookie') . '/help/index.html';
+      return $msg . '<br><br><hr> ' . file_get_contents($file_path);
+      break;
+  }
+}
+
+/**
+ * Implements hook_menu().
+ *
+ * This controls the menu link and path/content of the settings page.
+ */
+function jquery_cookie_menu() {
+  $items = [];
+
+  $items['admin/config/services/jquery-cookie'] = [
+    'title' => 'jQuery Cookie Settings',
+    'description' => 'Configuration for the jQuery Cookie module',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => ['jquery_cookie_form'],
+    'access arguments' => ['access administration pages'],
+    'type' => MENU_NORMAL_ITEM,
+  ];
+
+  return $items;
+}
+
+/**
+ * Implements hook_page_alter().
+ *
+ * Enables jquery.cookie, which is included in Drupal 7's core.
+ */
+function jquery_cookie_page_alter(&$page) {
+
+  if (variable_get('jquery_cookie_is_enabled')) {
+    // Enable jQuery Cookie and put it on every page
+    drupal_add_library('system', 'jquery.cookie');
+  }
+
+}
