@@ -45,9 +45,7 @@ function jquery_cookie_menu() {
  */
 function jquery_cookie_page_alter(&$page) {
 
-  if (variable_get('jquery_cookie_is_enabled')) {
-    // Enable jQuery Cookie and put it on every page
-    drupal_add_library('system', 'jquery.cookie');
-  }
+  // Enable jQuery Cookie and put it on every page
+  drupal_add_library('system', 'jquery.cookie');
 
 }
