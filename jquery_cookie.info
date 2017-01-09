@@ -1,0 +1,3 @@
+name = Jquery Cookie
+description = Enables jQuery Cookie from Drupal's core System Module.
+core = 7.x

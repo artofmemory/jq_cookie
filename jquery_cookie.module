@@ -1,0 +1,5 @@
+<?php
+/**
+* @file
+* Enables jQuery Cookie from Drupal's core System Module
+*/
