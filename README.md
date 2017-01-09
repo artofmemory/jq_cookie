@@ -6,4 +6,4 @@ Enabling this module will load jQuery Cookie on every page of a site.
 
 ## License
 
-GPL 2 -- see the LICENSE file.
+GPL 2. See the LICENSE file.
